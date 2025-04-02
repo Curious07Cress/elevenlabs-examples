@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import { Mail, VideoIcon, VideoOffIcon } from "lucide-react";
+import { VideoIcon, VideoOffIcon } from "lucide-react";
 
 interface SantaCardProps {
   name: string | null;
@@ -41,7 +41,7 @@ export function SantaCard({
             exit={{ y: 100, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
           >
-            <Button
+            {/* <Button
               onClick={() => setIsOpen(true)}
               className="text-white font-bold px-10 py-5 rounded-full border-red-500 border-2 bg-red-900/90 hover:bg-white/5 backdrop-blur-[16px] shadow-2xl"
               variant="default"
@@ -52,7 +52,7 @@ export function SantaCard({
                 Open Your Letter to Santa
               </span>
               <span className="sm:hidden">Open Letter</span>
-            </Button>
+            </Button> */}
           </motion.div>
         )}
       </AnimatePresence>

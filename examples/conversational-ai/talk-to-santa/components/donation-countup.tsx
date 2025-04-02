@@ -1,26 +1,12 @@
 "use client";
 
-import { getConversationCount } from "@/app/(main)/(santa)/actions/actions";
-import { christmasFont } from "@/components/custom-fonts";
-import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export const DonationCountup = () => {
-  const [conversationCount, setConversationCount] = useState<number>(0);
-
-  const donationPerConversation = 2;
-  const maxDonation = 11000;
-  const totalDonation = Math.min(
-    conversationCount * donationPerConversation,
-    maxDonation
-  );
-  const isMaxDonationReached = totalDonation >= maxDonation;
-
   useEffect(() => {
     const fetchConversationCount = async () => {
-      const data = await getConversationCount({});
-      setConversationCount(data?.data?.count || 0);
+      
     };
 
     fetchConversationCount();
@@ -33,7 +19,7 @@ export const DonationCountup = () => {
       transition={{ type: "spring", bounce: 0 }}
       className="fixed top-0 right-0 z-50"
     >
-      <div
+      {/* <div
         className="bg-white/5 backdrop-blur-[16px] shadow-2xl p-0 sm:p-4 border-l-[4px] border-b-[4px] sm:border-[4px] sm:border-transparent sm:border-r-0"
         style={{
           borderImage:
@@ -77,7 +63,7 @@ export const DonationCountup = () => {
             </div>
           </motion.div>
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };

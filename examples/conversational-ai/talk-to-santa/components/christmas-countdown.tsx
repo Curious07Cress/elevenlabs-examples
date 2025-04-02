@@ -1,17 +1,17 @@
 "use client";
 
-import { christmasFont } from "@/components/custom-fonts";
-import { cn } from "@/lib/utils";
+// import { christmasFont } from "@/components/custom-fonts";
+// import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 export const ChristmasCountdown = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  // const [setTimeLeft] = useState({
+  //   days: 0,
+  //   hours: 0,
+  //   minutes: 0,
+  //   seconds: 0,
+  // });
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -21,12 +21,12 @@ export const ChristmasCountdown = () => {
       const difference = christmas.getTime() - now.getTime();
 
       if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
+        // setTimeLeft({
+        //   days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        //   hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        //   minutes: Math.floor((difference / 1000 / 60) % 60),
+        //   seconds: Math.floor((difference / 1000) % 60),
+        // });
         setIsLoading(false);
       }
     };
@@ -46,7 +46,7 @@ export const ChristmasCountdown = () => {
       transition={{ type: "spring", bounce: 0.25 }}
       className="fixed top-0 left-1/2 z-50 overflow-hidden"
     >
-      <div
+      {/* <div
         className="rounded-b-2xl bg-white/5 backdrop-blur-[16px] shadow-2xl p-4"
         style={{
           border: "4px solid transparent",
@@ -92,7 +92,7 @@ export const ChristmasCountdown = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </motion.div>
   );
 };
